@@ -25,13 +25,17 @@ export default {
 
   methods: {
     async login() {
-      const auth = await this.$auth.authenticate("github");
-      if (auth.status == 200) {
-        this.$store.dispatch("setUser", auth.data);
-        this.$store.dispatch("setIsUserLoggedIn", true);
-        this.$router.push("/");
-      } else {
-        this.error = auth.data.message;
+      try {
+        const auth = await this.$auth.authenticate("github");
+        if (auth.status == 200) {
+          this.$store.dispatch("setUser", auth.data);
+          this.$store.dispatch("setIsUserLoggedIn", true);
+          this.$router.push("/");
+        } else {
+          this.error = auth.data.message;
+        }
+      } catch (error) {
+        console.log(error);
       }
     }
   }
