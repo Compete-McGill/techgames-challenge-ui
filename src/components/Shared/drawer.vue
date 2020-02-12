@@ -31,9 +31,59 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title class="white--text title text-uppercase">
-            {{ item.title }}
-          </v-list-item-title>
+          <v-list-item-title class="white--text title text-uppercase">{{
+            item.title
+          }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item
+        v-if="!$store.state.isUserLoggedIn"
+        class="py-3"
+        link
+        router
+        to="/login"
+      >
+        <v-list-item-icon>
+          <v-icon large class="white--text ml-3">mdi-login-variant</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-content>
+          <v-list-item-title class="white--text title text-uppercase"
+            >login</v-list-item-title
+          >
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item
+        v-if="$store.state.isUserLoggedIn"
+        class="py-3"
+        link
+        router
+        to="/score"
+      >
+        <v-list-item-icon>
+          <v-icon large class="white--text ml-3">mdi-scoreboard</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-content>
+          <v-list-item-title class="white--text title text-uppercase"
+            >score</v-list-item-title
+          >
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item
+        @click="logout"
+        v-if="$store.state.isUserLoggedIn"
+        class="py-3"
+        link
+      >
+        <v-list-item-icon>
+          <v-icon large class="white--text ml-3">mdi-logout-variant</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-content>
+          <v-list-item-title class="white--text title text-uppercase"
+            >logout</v-list-item-title
+          >
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -47,11 +97,18 @@ export default {
       drawer: true,
       items: [
         { title: "Home", icon: "mdi-view-dashboard", link: "/" },
-        { title: "Tasks", icon: "mdi-clipboard-list", link: "/tasks" },
-        { title: "Login", icon: "mdi-login-variant", link: "/login" }
+        { title: "Tasks", icon: "mdi-clipboard-list", link: "/tasks" }
       ],
       mini: false
     };
+  },
+
+  methods: {
+    logout() {
+      this.$store.dispatch("setIsUserLoggedIn", false);
+      this.$store.dispatch("setUser", null);
+      this.$router.push("/login");
+    }
   }
 };
 </script>
