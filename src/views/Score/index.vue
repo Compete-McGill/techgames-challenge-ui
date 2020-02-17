@@ -8,5 +8,11 @@
 </template>
 
 <script>
-export default {};
+// import axios from "axios";
+
+export default {
+  data() {},
+
+  mounted() {}
+};
 </script>
