@@ -3,9 +3,7 @@
     <h1 class="display-3 grey--text my-5">Login</h1>
     <br />
     <br />
-    <div class="title grey--text">
-      Login to fork our template repo and start the challenge!
-    </div>
+    <div class="title grey--text">Login to fork our template repo and start the challenge!</div>
     <br />
     <v-btn text class="primary--text title" @click="login">
       Login with
@@ -45,7 +43,6 @@ export default {
               githubUser.login +
               "?scores=true"
           );
-          console.log(user);
           this.$store.dispatch("setUser", user);
           this.$store.dispatch("setIsUserLoggedIn", true);
           this.$router.push("/");
