@@ -8,15 +8,12 @@
       </div>
       <br />
       <br />
-  
-      <!-- <h2 class="subtitle border-bottom black--text">Table of Contents</h2> -->
+      
       <span class="border-bottom border-dark"></span>
   
       <div id="table-of-contents"> 
       <h3 class="title">Table of contents</h3>
         <v-divider></v-divider>
-        <!-- Need to inser actual table of contents -->
-        <!-- <v-btn v-click="$vuetify.goTo('#liveness')"></v-btn> -->
         <ul>
           <li class="title"><a style="text-decoration:none" href="#liveness">Liveness</a></li>
           <li class="title"><a style="text-decoration:none" href="#create-article">Create articles</a></li>
@@ -52,10 +49,6 @@
         </v-card>
         <br />
       </div>
-  
-  
-   
-  <!-- Articles -->
   
      <div id="articles">
         <h3 class="display-1">Articles</h3>
@@ -186,7 +179,6 @@
         <br />
         </div>
   
-  
         <div id="update-article">
         <h3 class=title>Update article</h3>
         <v-divider></v-divider>
@@ -222,7 +214,7 @@
         If no article exists with the given id, then request should return error status 404.
         If the request was bad (e.g invalid id, ), the the request should return error message 400.
         </p>
-  
+
         <v-card >
           <v-card-subtitle>
             DELETE /articles/ARTICLE_ID reponse:
@@ -236,11 +228,9 @@
           </v-card-text>
         </v-card>
         <br />
-  
+
         </div>
       </div>
-  
-      
     </v-container>
   </template>
   
