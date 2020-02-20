@@ -40,11 +40,11 @@ export default {
           const { data: user } = await axios.get(
             process.env.VUE_APP_API_BASE_URL +
               "/users/username/" +
-              githubUser.login
+              githubUser.login +
+              "?scores=true"
           );
           this.$store.dispatch("setUser", user);
           this.$store.dispatch("setIsUserLoggedIn", true);
-          console.log(this.$store.state.user);
           this.$router.push("/");
         } else {
           this.error = auth.data.message;
