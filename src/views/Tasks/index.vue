@@ -176,7 +176,8 @@
         <p>
           A GET request on route <code>"/articles/{articleId}"</code> should
           return the article with the respective ID. If the article does not
-          exist, then the request should return error 404.
+          exist, then the request should return status code 404. If the article
+          id isn't a valid id, the request should return a status code 400.
         </p>
 
         <v-card class="grey lighten-4">
