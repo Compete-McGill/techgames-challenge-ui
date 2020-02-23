@@ -13,12 +13,12 @@ Vue.use(VueAxios, axios);
 Vue.config.productionTip = false;
 
 Vue.use(VueAuthenticate, {
-  baseUrl: process.env.VUE_APP_API_BASE_URL,
+  baseUrl: "http://api.backend-challenge.techgames.compete-mcgill.ca",
   providers: {
     github: {
-      clientId: process.env.VUE_APP_GITHUB_CLIENT_ID,
-      clientSecret: process.env.VUE_APP_GITHUB_CLIENT_SECRET,
-      redirectUri: process.env.VUE_APP_GITHUB_CLIENT_REDIRECT_URI,
+      clientId: "88b3cbf574c3871f61ee",
+      clientSecret: "dcad773d270e25b49f0d1a6bc86d9a31ef67d1af",
+      redirectUri: "http://backend-challenge.techgames.compete-mcgill.ca",
       scope: "user"
     }
   }
