@@ -154,7 +154,12 @@ export default {
         process.env.VUE_APP_API_BASE_URL +
           "/users/username/" +
           this.user.githubUsername +
-          "?scores=true"
+          "?scores=true",
+        {
+          headers: {
+            "X-Secret": process.env.VUE_APP_API_SECRET
+          }
+        }
       );
       this.user = user;
       this.$store.dispatch("setUser", user);
