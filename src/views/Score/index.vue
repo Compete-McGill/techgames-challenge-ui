@@ -132,8 +132,7 @@ export default {
 
     async updateUser() {
       const { data: user } = await axios.get(
-        process.env.VUE_APP_API_BASE_URL +
-          "/users/username/" +
+        "http://api.backend-challenge.techgames.compete-mcgill.ca/users/username/" +
           this.user.githubUsername +
           "?scores=true",
         {
