@@ -59,7 +59,7 @@
           hide-default-footer
         >
           <template v-slot:header>
-            <v-toolbar class="mb-2" color="indigo darken-5" dark flat>
+            <v-toolbar class="mb-2" color="blue darken-1" dark flat>
               <v-toolbar-title>Previous Scores</v-toolbar-title>
             </v-toolbar>
           </template>
@@ -111,7 +111,7 @@
           </template>
 
           <template v-slot:footer>
-            <v-toolbar class="mt-2" color="indigo" dark flat>
+            <v-toolbar class="mt-2" color="blue darken-1" dark flat>
               <v-toolbar-title class="subheading"></v-toolbar-title>
             </v-toolbar>
           </template>
