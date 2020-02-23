@@ -43,7 +43,12 @@ export default {
             process.env.VUE_APP_API_BASE_URL +
               "/users/username/" +
               githubUser.login +
-              "?scores=true"
+              "?scores=true",
+            {
+              headers: {
+                "X-Secret": process.env.VUE_APP_API_SECRET
+              }
+            }
           );
           this.$store.dispatch("setUser", user);
           this.$store.dispatch("setIsUserLoggedIn", true);
