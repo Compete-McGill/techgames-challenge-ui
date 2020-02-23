@@ -12,7 +12,7 @@
     <br />
 
     <div id="score">
-      <h3 class="display-1">Most Receny Score</h3>
+      <h3 class="display-1">Most Recent Score</h3>
       <template>
         <v-simple-table>
           <template v-slot:default>
