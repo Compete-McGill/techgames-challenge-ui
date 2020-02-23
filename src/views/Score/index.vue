@@ -7,9 +7,7 @@
     <v-divider></v-divider>
     <div id="repository">
       <h3 class="display-1 mt-5">Your repository</h3>
-      <a href style="text-decoration:none" class="title">
-        {{ user.githubRepo }}</a
-      >
+      <a href style="text-decoration:none" class="title">{{ user.githubRepo }}</a>
     </div>
     <br />
 
@@ -33,9 +31,7 @@
                 <td>{{ test }}</td>
                 <td>
                   <v-icon v-if="value" class="ml-2">mdi-check-bold</v-icon>
-                  <v-icon v-else-if="!value" class="ml-2"
-                    >mdi-window-close</v-icon
-                  >
+                  <v-icon v-else-if="!value" class="ml-2">mdi-window-close</v-icon>
                 </td>
               </tr>
             </tbody>
@@ -45,9 +41,7 @@
     </div>
 
     <div id="refresh-scores">
-      <v-btn class="ma-2 mt-5" outlined color="blue" @click="updateUser"
-        >Refresh Scores</v-btn
-      >
+      <v-btn class="ma-2 mt-5" outlined color="blue" @click="updateUser">Refresh Scores</v-btn>
     </div>
 
     <template>
@@ -66,19 +60,12 @@
 
           <template v-slot:default="props">
             <v-row>
-              <v-col
-                v-for="item in props.items"
-                :key="item"
-                cols="12"
-                sm="7"
-                md="5"
-                lg="4"
-              >
+              <v-col v-for="item in props.items" :key="item" cols="12" sm="7" md="5" lg="4">
                 <v-card class="align-end">
                   <v-card-title class="subheading font-weight-bold">
                     Submission
-                    {{ timestampToTime(item.timestamp) }}</v-card-title
-                  >
+                    {{ timestampToTime(item.timestamp) }}
+                  </v-card-title>
 
                   <v-divider></v-divider>
 
@@ -88,19 +75,13 @@
                       v-for="(value, test) in item"
                       v-bind:key="(test, value)"
                     >
-                      <v-list-item-content
-                        ><span class="text-left"
-                          >{{ test }}:
-                        </span></v-list-item-content
-                      >
-                      <v-list-item-content
-                        ><span class="text-right">
-                          <v-icon v-if="value" class="ml-2"
-                            >mdi-check-bold</v-icon
-                          >
-                          <v-icon v-else-if="!value" class="ml-2"
-                            >mdi-window-close</v-icon
-                          >
+                      <v-list-item-content>
+                        <span class="text-left">{{ test }}:</span>
+                      </v-list-item-content>
+                      <v-list-item-content>
+                        <span class="text-right">
+                          <v-icon v-if="value" class="ml-2">mdi-check-bold</v-icon>
+                          <v-icon v-else-if="!value" class="ml-2">mdi-window-close</v-icon>
                         </span>
                       </v-list-item-content>
                     </v-list-item>
@@ -157,7 +138,7 @@ export default {
           "?scores=true",
         {
           headers: {
-            "X-Secret": process.env.VUE_APP_API_SECRET
+            "X-Secret": "ZGVscGhpLWFkbWlu"
           }
         }
       );
